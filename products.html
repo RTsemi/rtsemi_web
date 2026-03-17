@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品中心 | RT Semiconductor 无锡芯柏年</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --brand-dark: #050a14; }
+        body { background-color: var(--brand-dark); color: #e2e8f0; font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .nav-logo { height: 40px; width: auto; filter: drop-shadow(0 0 5px rgba(56, 189, 248, 0.2)); }
+    </style>
+</head>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const buttons = document.querySelectorAll('.filter-btn');
+        const items = document.querySelectorAll('.product-item');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                // 1. 处理按钮样式切换
+                buttons.forEach(btn => {
+                    btn.classList.remove('text-sky-400', 'border-sky-400/50');
+                    btn.classList.add('text-gray-400');
+                });
+                button.classList.add('text-sky-400', 'border-sky-400/50');
+                button.classList.remove('text-gray-400');
+
+                // 2. 执行筛选逻辑
+                const target = button.getAttribute('data-target');
+
+                items.forEach(item => {
+                    if (target === 'all') {
+                        item.style.display = 'flex'; // 恢复显示
+                    } else {
+                        if (item.getAttribute('data-category') === target) {
+                            item.style.display = 'flex';
+                        } else {
+                            item.style.display = 'none'; // 隐藏不匹配的
+                        }
+                    }
+                });
+            });
+        });
+    });
+</script>
+
+<body class="bg-slate-950">
+
+    <nav class="fixed w-full z-50 glass py-3 px-8 flex justify-between items-center">
+        <a href="index.html" class="flex items-center space-x-3 hover:opacity-80 transition">
+            <i class="fas fa-microchip text-sky-400"></i>
+            <span class="text-xs tracking-widest text-gray-400 font-bold border-l border-white/10 pl-3">返回首页</span>
+        </a>
+        <div class="text-[10px] text-gray-500 tracking-[0.2em] uppercase hidden md:block">
+            Precision Analog & Power Management
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-20 px-8 max-w-7xl mx-auto">
+        <div class="mb-12 border-b border-white/5 pb-8">
+            <h1 class="text-4xl font-bold text-white mb-4">产品中心 <span class="text-sky-400 text-lg ml-2 font-light">Product Center</span></h1>
+            <p class="text-gray-400 text-sm">在这里获取最新的产品规格书 (Datasheet) 与技术支持文档。</p>
+        </div>
+
+        <div class="flex flex-wrap gap-4 mb-10" id="filter-buttons">
+            <button class="filter-btn active px-4 py-1 text-xs glass rounded-full text-sky-400 border-sky-400/50"data-target="all">全部产品</button>
+            <button class="filter-btn px-4 py-1 text-xs glass rounded-full text-gray-400 hover:text-white transition" data-target="pmic">电源管理 (PMIC)</button>
+            <button class="filter-btn px-4 py-1 text-xs glass rounded-full text-gray-400 hover:text-white transition" data-target="watchdog">监控芯片 (Watchdog)</button>
+            <button class="filter-btn px-4 py-1 text-xs glass rounded-full text-gray-400 hover:text-white transition" data-target="interface">接口芯片 (Interface)</button>
+        </div>
+
+        <div class="grid gap-4" id="product-list">
+            <div class="product-item glass p-6 rounded-lg flex flex-col md:flex-row justify-between items-center group hover:border-sky-500/30 transition" data-category="interface">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition">RT485</h3>
+                    <p class="text-xs text-gray-500 mt-1">超低功耗接口芯片</p>
+                </div>
+                <div class="flex items-center space-x-12">
+                    <div class="text-center hidden lg:block">
+                        <span class="block text-[10px] text-gray-600 uppercase">速率</span>
+                        <span class="text-sm font-mono text-gray-300">16 Mbps</span>
+                    </div>
+                    <div class="text-center hidden lg:block">
+                        <span class="block text-[10px] text-gray-600 uppercase">封装</span>
+                        <span class="text-sm font-mono text-gray-300">SOP8</span>
+                    </div>
+                    <a href="datasheets/RT485超低功耗接口芯片.pdf" target="_blank" class="bg-sky-500/10 text-sky-400 px-6 py-2 rounded-sm text-xs font-bold hover:bg-sky-500 hover:text-white transition flex items-center">
+                        <i class="far fa-file-pdf mr-2 text-sm"></i> 下载 DATASHEET
+                    </a>
+                </div>
+            </div>
+
+        <div class="grid gap-4" id="product-list">
+            <div class="product-item glass p-6 rounded-lg flex flex-col md:flex-row justify-between items-center group hover:border-sky-500/30 transition" data-category="pmic">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition">RT5015</h3>
+                    <p class="text-xs text-gray-500 mt-1">开关降压型LED恒流控制器</p>
+                </div>
+                <div class="flex items-center space-x-12">
+                    <div class="text-center hidden lg:block">
+                        <span class="block text-[10px] text-gray-600 uppercase">效率</span>
+                        <span class="text-sm font-mono text-gray-300">96%</span>
+                    </div>
+                    <div class="text-center hidden lg:block">
+                        <span class="block text-[10px] text-gray-600 uppercase">封装</span>
+                        <span class="text-sm font-mono text-gray-300">SOT-23-5</span>
+                    </div>
+                    <a href="datasheets/RT5015开关降压型LED恒流控制器.pdf" target="_blank" class="bg-sky-500/10 text-sky-400 px-6 py-2 rounded-sm text-xs font-bold hover:bg-sky-500 hover:text-white transition flex items-center">
+                        <i class="far fa-file-pdf mr-2 text-sm"></i> 下载 DATASHEET
+                    </a>
+                </div>
+            </div>
+
+       <div class="grid gap-4" id="product-list">
+            <div class="product-item glass p-6 rounded-lg flex flex-col md:flex-row justify-between items-center group hover:border-sky-500/30 transition" data-category="watchdog">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition">RT70X</h3>
+                    <p class="text-xs text-gray-500 mt-1">带看门狗功能的电压复位芯片</p>
+                </div>
+                <div class="flex items-center space-x-12">
+                    <div class="text-center hidden lg:block">
+                        <span class="block text-[10px] text-gray-600 uppercase">静态电流</span>
+                        <span class="text-sm font-mono text-gray-300">50μA</span>
+                    </div>
+                    <div class="text-center hidden lg:block">
+                        <span class="block text-[10px] text-gray-600 uppercase">封装</span>
+                        <span class="text-sm font-mono text-gray-300">SOT-23-5</span>
+                    </div>
+                    <a href="datasheets/RT70X带看门狗功能的电压复位芯片.pdf" target="_blank" class="bg-sky-500/10 text-sky-400 px-6 py-2 rounded-sm text-xs font-bold hover:bg-sky-500 hover:text-white transition flex items-center">
+                        <i class="far fa-file-pdf mr-2 text-sm"></i> 下载 DATASHEET
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-12 text-center border-t border-white/5 opacity-50">
+        <p class="text-[10px] tracking-widest uppercase">© 2026 RT Semiconductor | 无锡芯柏年半导体有限公司</p>
+    </footer>
+
+
+
+</body>
+</html>

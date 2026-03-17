@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 | RT Semiconductor 无锡芯柏年</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --brand-dark: #050a14; }
+        body { background-color: var(--brand-dark); color: #e2e8f0; font-family: 'Inter', 'PingFang SC', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .nav-logo { height: 40px; width: auto; filter: drop-shadow(0 0 5px rgba(56, 189, 248, 0.2)); }
+        .contact-icon { width: 50px; height: 50px; display: flex; items-center; justify-content: center; background: rgba(56, 189, 248, 0.1); border-radius: 50%; color: #38bdf8; margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body class="bg-slate-950">
+
+    <nav class="fixed w-full z-50 glass py-3 px-8 flex justify-between items-center">
+        <a href="index.html" class="flex items-center space-x-3 hover:opacity-80 transition">
+            <i class="fas fa-microchip text-sky-400"></i>
+            <span class="text-xs tracking-widest text-gray-400 font-bold border-l border-white/10 pl-3">返回首页</span>
+        </a>
+    </nav>
+
+    <main class="pt-40 pb-20 px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl font-bold text-white mb-4">联系我们 <span class="text-sky-400 text-lg ml-2 font-light">Contact Us</span></h1>
+            <p class="text-gray-400 max-w-2xl mx-auto">无论是产品咨询、技术支持还是商务合作，我们的专家团队都随时准备为您提供帮助。</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <div class="glass p-8 rounded-2xl text-center flex flex-col items-center hover:border-sky-500/30 transition contact-card">
+                <div class="contact-icon text-sky-400 mb-4 text-2xl"><i class="fas fa-map-marker-alt"></i></div>
+                <h3 class="text-xl font-bold mb-2 text-white">公司地址</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    江苏省无锡市新吴区<br>
+                    (无锡芯柏年半导体有限公司办公点)
+                </p>
+            </div>
+
+            <div class="glass p-8 rounded-2xl text-center flex flex-col items-center hover:border-sky-500/30 transition contact-card">
+                <div class="contact-icon text-sky-400 mb-4 text-2xl"><i class="fas fa-envelope"></i></div>
+                <h3 class="text-xl font-bold mb-2 text-white">联系邮箱</h3>
+                <p class="text-sm text-gray-400 leading-relaxed font-mono">
+                    Sales: sales@rtsemi.com
+                </p>
+            </div>
+        </div>
+
+        <div class="glass p-4 rounded-2xl mb-16">
+            <h3 class="text-white font-bold mb-4 flex items-center">
+                <i class="fas fa-location-arrow mr-2 text-sky-400"></i> 地图定位 / Map Location
+            </h3>
+            <div id="map-container"></div>
+        </div>
+    </main>
+
+    <footer class="py-12 text-center border-t border-white/5 opacity-50">
+        <p class="text-[10px] tracking-widest uppercase">© 2026 无锡芯柏年半导体有限公司 | RT SEMICONDUCTOR</p>
+    </footer>
+
+</body>
+</html>

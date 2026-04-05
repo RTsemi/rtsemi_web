@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RT Semiconductor | 无锡芯柏年半导体有限公司</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --brand-dark: #050a14; --brand-accent: #38bdf8; }
+        body { background-color: var(--brand-dark); color: #e2e8f0; font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .hero-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%); z-index: -1; }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed w-full z-50 glass py-4 px-8 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 border-2 border-sky-400 rounded-full flex items-center justify-center">
+                <i class="fas fa-microchip text-sky-400"></i>
+            </div>
+            <div>
+                <div class="text-xl font-bold leading-none text-white uppercase tracking-wider">RT <span class="font-light text-gray-400 text-xs">semiconductor</span></div>
+                <div class="text-[9px] text-gray-400 tracking-[0.1em] mt-1">Wuxi XinBainian Semiconductor Co., Ltd.</div>
+            </div>
+        </div>
+        <div class="hidden md:flex space-x-10 text-xs font-semibold uppercase tracking-widest text-gray-400 items-center">
+            <a href="#" class="text-white">Home</a>
+            <a href="#solutions" class="hover:text-sky-400 transition">Solutions</a>
+            <a href="products.html" class="hover:text-sky-400 transition">Products</a>
+            <a href="contact.html" class="hover:text-sky-400 transition">Contact</a>
+            <a href="index.html" class="text-sky-400 border border-sky-400/30 px-3 py-1 rounded hover:bg-sky-400 hover:text-white transition font-bold">中文</a>
+        </div>
+    </nav>
+
+    <section class="relative h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden">
+        <div class="hero-glow"></div>
+        <h2 class="text-gray-500 text-sm tracking-[0.5em] mb-4 uppercase">AI Driven Analog IC Design</h2>
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            Innovating the Future <br> <span class="text-sky-400">Precision</span> Forever
+        </h1>
+        <p class="text-gray-400 max-w-xl text-sm md:text-base leading-relaxed mb-10">
+            Specializing in AI-assisted technology and Python-based EDA automation to provide high-performance analog IC solutions for global customers.
+        </p>
+        <div class="flex space-x-4">
+            <a href="products_en.html" class="bg-sky-500 text-white px-12 py-3 rounded-sm text-xs font-bold hover:bg-sky-400 transition shadow-lg shadow-sky-500/20 uppercase tracking-widest">
+                Product Center
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 text-center">
+        <p class="text-[10px] text-gray-500 tracking-widest uppercase">
+            © 2026 Wuxi XinBainian Semiconductor Co., Ltd. | RT Semiconductor
+        </p>
+    </footer>
+</body>
+</html>
